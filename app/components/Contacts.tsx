@@ -45,7 +45,7 @@ const Contacts = () => {
       >
       <h1 className="flex justify-center text-4xl font-bold mt-30 text-glow">Contact me</h1>
       <p className="text-glow-2 text-2xl font-semibold p-4">
-        Got a question, idea, or just want to connect? Drop me a message – I'm always happy to chat!
+        Got a question, idea, or just want to connect? Drop me a message – I am always happy to chat!
       </p>
       <form onSubmit={onSubmit}>
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">

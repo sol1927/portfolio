@@ -11,7 +11,7 @@ const Skills = () => {
       transition={{ duration: 2 }}
     >
       <h1 className="flex justify-center text-4xl font-bold mb-10 mt-25 text-glow">Skills</h1>
-      <p className="text-glow-2 text-2xl font-semibold p-4">I'm always learning and expand my skillset - here are the technologies i currently work with.</p>
+      <p className="text-glow-2 text-2xl font-semibold p-4">I am always learning and expand my skillset - here are the technologies i currently work with.</p>
       <div className="grid cols-1 md:grid-cols-3 justify-center m-6 p-4 gap-20">
         <div className="bg-blue-950 text-white p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300">
           <h2 className="text-2xl flex justify-center">Languages & Databases</h2>

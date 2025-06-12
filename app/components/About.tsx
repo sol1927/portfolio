@@ -34,7 +34,7 @@ const About = () => {
         </div>
         <div className="flex flex-col gap-6 flex-1">
           <p className="font-semibold text-lg text-glow-2">
-            I'm Solomon, a software engineering student and full-stack web developer based in Ethiopia. I enjoy turning complex problems into elegant, functional solutions through clean, responsive code. I'm passionate about learning new technologies and building tools that make a real difference.
+            I am Solomon, a software engineering student and full-stack web developer based in Ethiopia. I enjoy turning complex problems into elegant, functional solutions through clean, responsive code. I am passionate about learning new technologies and building tools that make a real difference.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-6">

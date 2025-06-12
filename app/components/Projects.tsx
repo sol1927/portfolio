@@ -13,7 +13,7 @@ const Projects = () => {
       transition={{ duration: 2 }}
     >
       <h1 className="flex justify-center text-4xl font-bold mb-10 mt-30 text-glow">Projects</h1>
-      <p className="text-glow-2 text-2xl font-semibold p-4">Here are some of the projects I've worked on, showcasing my skills in web development and software engineering.</p>
+      <p className="text-glow-2 text-2xl font-semibold p-4">Here are some of the projects I have worked on, showcasing my skills in web development and software engineering.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 m-4">
       <div className="group relative w-full aspect-[16/9] lg:aspect-auto lg:h-80 rounded-lg overflow-hidden hover:-translate-y-2 transition-all duration-700 shadow-gray-700 shadow-[10px_10px_10px_2px] hover:shadow-blue-500">
           <Image
