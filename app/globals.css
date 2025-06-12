@@ -1,0 +1,10 @@
+@import "tailwindcss";
+.text-glow {
+  text-shadow: 2px 2px 4px rgba(163, 65, 40, 0.8); /* amber-like glow */
+}
+.text-glow-2 {
+  text-shadow: 2px 3px 4px rgba(94, 83, 83, 0.8); /* red glow */
+}
+html {
+  scroll-behavior: smooth;
+}
