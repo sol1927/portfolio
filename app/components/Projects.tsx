@@ -77,7 +77,7 @@ const Projects = () => {
         </div>
       </div>
     </motion.div>
-  );                              9
+  );
 }
 
 export default Projects;
