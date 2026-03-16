@@ -87,7 +87,7 @@ const Header = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
             >
-              <button className='flex items-center justify-center gap-2 shadow-gray-700 shadow-[10px_10px_10px_2px] bg-green-600 py-3 px-6 rounded-2xl hover:cursor-pointer hover:scale-110 hover:shadow-blue-600 transition-all duration-300' onClick={viewResume} >View Resuuuuuume <span><LuDownload className='w-5 h-5' /></span></button>
+              <button className='flex items-center justify-center gap-2 shadow-gray-700 shadow-[10px_10px_10px_2px] bg-green-600 py-3 px-6 rounded-2xl hover:cursor-pointer hover:scale-110 hover:shadow-blue-600 transition-all duration-300' onClick={viewResume} >View Resuuume <span><LuDownload className='w-5 h-5' /></span></button>
             </motion.div>
           </div>
         </div>
