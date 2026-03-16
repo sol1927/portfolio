@@ -7,17 +7,20 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <motion.div id="about" className="pt-8 p-4 m-30"
+    <motion.div
+      id="about"
+      className="pt-8 p-4"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 2 }}
     >
-      <h1 className="flex justify-center mb-8 mt-25 text-4xl font-bold text-glow">About me</h1>
-      <div className="flex flex-col md:flex-row items-start gap-6 mb-10">
-        <div className="m-4 flex-shrink-0 w-3/5 max-w-xs sm:w-48 md:w-56">
-          <div className="relative w-full pb-[150%] rounded-[50%] overflow-hidden shadow-[10px_10px_10px_2px] shadow-gray-700 hover:scale-110 hover:shadow-blue-500 hover:shadow-[0px_0px_15px_15px] transition-all duration-300"
+      <h1 className="flex justify-center pt-24 mb-8 mt-10 text-3xl sm:text-4xl font-bold text-glow">
+        About me
+      </h1>
 
-          >
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-10">
+        <div className="m-4 flex-shrink-0 w-full sm:w-48 md:w-56">
+          <div className="relative w-full pb-[100%] rounded-[50%] overflow-hidden shadow-[10px_10px_10px_2px] shadow-gray-700 hover:scale-110 hover:shadow-blue-500 hover:shadow-[0px_0px_15px_15px] transition-all duration-300">
             <Image
               src={assets.mypic}
               alt="pic"
@@ -27,28 +30,39 @@ const About = () => {
             <div
               className="absolute inset-0 rounded-[50%] pointer-events-none"
               style={{
-                boxShadow: 'inset 20px 20px 30px 30px rgba(0, 0, 0, 0.70)',
+                boxShadow: "inset 20px 20px 30px 30px rgba(0, 0, 0, 0.70)",
               }}
             />
           </div>
         </div>
-        <div className="flex flex-col gap-6 flex-1">
-          <p className="font-semibold text-lg text-glow-2">
-            I am Solomon, a software engineering student and full-stack web developer based in Ethiopia. I enjoy turning complex problems into elegant, functional solutions through clean, responsive code. I am passionate about learning new technologies and building tools that make a real difference.
+
+        <div className="flex flex-col gap-6 flex-1 px-2 sm:px-4">
+          <p className="font-semibold text-base sm:text-lg text-glow-2">
+            I am Solomon, a software engineering student and full-stack web
+            developer based in Ethiopia. I enjoy turning complex problems into
+            elegant, functional solutions through clean, responsive code. I am
+            passionate about learning new technologies and building tools that
+            make a real difference.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-6">
-            <div className="w-full bg-blue-950 text-white p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300">
-              <h2 className="text-2xl flex justify-center">Education</h2>
-              <ul className="list-disc pl-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-4 sm:gap-6">
+            <div className="w-full bg-blue-950 text-white p-4 sm:p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-105 hover:shadow-blue-500 transition-all duration-300">
+              <h2 className="text-lg sm:text-2xl flex justify-center mb-2">
+                Education
+              </h2>
+              <ul className="list-disc pl-4 text-sm sm:text-base">
                 <li>
-                  Bachelor of Science in Software Engineering, University of Arbaminch, Ethiopia
+                  Bachelor of Science in Software Engineering, University of
+                  Arbaminch, Ethiopia
                 </li>
               </ul>
             </div>
-            <div className="w-full bg-blue-950 text-white p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300">
-              <h2 className="text-2xl flex justify-center">Skills</h2>
-              <ul className="list-disc pl-2">
+
+            <div className="w-full bg-blue-950 text-white p-4 sm:p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-105 hover:shadow-blue-500 transition-all duration-300">
+              <h2 className="text-lg sm:text-2xl flex justify-center mb-2">
+                Skills
+              </h2>
+              <ul className="list-disc pl-4 text-sm sm:text-base">
                 <li>HTML</li>
                 <li>CSS (Tailwind)</li>
                 <li>JavaScript (React, Next.js)</li>
@@ -56,9 +70,12 @@ const About = () => {
                 <li>MongoDB</li>
               </ul>
             </div>
-            <div className="w-full bg-blue-950 text-white p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300">
-              <h2 className="text-2xl flex justify-center">Projects</h2>
-              <ul className="list-disc pl-2">
+
+            <div className="w-full bg-blue-950 text-white p-4 sm:p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-105 hover:shadow-blue-500 transition-all duration-300">
+              <h2 className="text-lg sm:text-2xl flex justify-center mb-2">
+                Projects
+              </h2>
+              <ul className="list-disc pl-4 text-sm sm:text-base">
                 <li>GibiGebeta</li>
                 <li>Rock-Paper-Scissors Game</li>
                 <li>Personal Portfolio Website</li>
@@ -67,9 +84,17 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="flex gap-4 items-center justify-center mt-8">
-        <p className="text-glow-2 font-semibold text-lg">Wants to know more? Feel free to contact me 😊</p>
-        <button className="shadow-gray-700 shadow-[10px_10px_10px_2px] bg-lime-800 border border-gray-700 text-white py-3 px-6 rounded-2xl hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300" onClick={() => window.location.href = '#contacts'}>Contact me</button>
+
+      <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-8 text-center">
+        <p className="text-glow-2 font-semibold text-base sm:text-lg">
+          Wants to know more? Feel free to contact me 😊
+        </p>
+        <button
+          className="shadow-gray-700 shadow-[10px_10px_10px_2px] bg-lime-800 border border-gray-700 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-2xl hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300"
+          onClick={() => (window.location.href = "#contacts")}
+        >
+          Contact me
+        </button>
       </div>
     </motion.div>
   );

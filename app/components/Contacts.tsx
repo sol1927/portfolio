@@ -7,7 +7,6 @@ import Footer from "./Footer";
 import { motion } from "framer-motion";
 
 const Contacts = () => {
-
   const [result, setResult] = useState('');
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -34,7 +33,6 @@ const Contacts = () => {
       } else {
         setResult(data.message);
       }
-
     } catch (error) {
       console.log(error);
       setResult("No internet connection");
@@ -42,15 +40,20 @@ const Contacts = () => {
   };
 
   return (
-    <motion.div id="contacts" className="max-w-4xl mx-auto p-2"
+    <motion.div
+      id="contacts"
+      className="max-w-4xl mx-auto p-2"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 2 }}
     >
-      <h1 className="flex justify-center text-4xl font-bold mt-30 text-glow">Contact me</h1>
-      <p className="text-glow-2 text-2xl font-semibold p-4">
-        Got a question, idea, or just want to connect? Drop me a message - I am always happy to chat!
+      <h1 className="flex justify-center pt-24 text-3xl sm:text-4xl font-bold mt-10 text-glow">
+        Contact me
+      </h1>
+      <p className="text-glow-2 text-base sm:text-2xl font-semibold p-4 text-center">
+        Got a question, idea, or just want to connect? Drop me a message — I am always happy to chat!
       </p>
+
       <form onSubmit={onSubmit}>
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <input
@@ -74,32 +77,38 @@ const Contacts = () => {
           name="message"
           className="mt-2 border p-2 rounded resize-none w-full bg-white h-32 mb-4"
         ></textarea>
-        <div className="flex flex-col justify-center items-center mb-4 mt-6">
+        <div className="flex flex-col justify-center items-center mt-4">
           <p className="pb-2">{result}</p>
           <button
             type="submit"
             disabled={result === "Sending...."}
-            className={`shadow-gray-700 shadow-[10px_10px_10px_2px] bg-black text-white py-3 px-6 rounded-2xl transition-all duration-300 ${result === "Sending...."
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:cursor-pointer hover:scale-110 hover:shadow-blue-500"
+            className={`shadow-gray-700 shadow-[10px_10px_10px_2px] bg-black text-white py-2 px-4 sm:py-3 sm:px-6 rounded-2xl transition-all duration-300 ${result === "Sending...."
+              ? "opacity-50 cursor-not-allowed"
+              : "hover:cursor-pointer hover:scale-110 hover:shadow-blue-500"
               }`}
           >
             {result === "Sending...." ? "Sending..." : "Send Message"}
           </button>
         </div>
       </form>
+
       <div className="flex justify-end relative">
-        <a href="#header" className="relative group hover:cursor-pointer hover:scale-120 transition-all duration-300">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="relative group hover:cursor-pointer hover:scale-110 transition-all duration-300"
+        >
           <FiArrowUpCircle className="w-10 h-10" />
-          <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+          <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-black text-white text-xs sm:text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
             Scroll to Top
           </span>
-        </a>
+        </button>
       </div>
-      <div className="border-b flex justify-center items-center mt-6 gap-1">
+
+      <div className="border-b flex justify-center items-center mt-6 gap-1 text-sm sm:text-base">
         <MdOutlineMail className="w-5 h-5" />
         <p>solomonaragaw691@gmail.com</p>
       </div>
+
       <Footer />
     </motion.div>
   );

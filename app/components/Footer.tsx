@@ -37,8 +37,8 @@ const Footer = () => {
             href="https://www.instagram.com/sol19271/"
             target="_blank"
             rel="noopener noreferrer"
-            >
-           <FiInstagram className="w-5 h-5 hover:text-red-500 hover:scale-110" />
+          >
+            <FiInstagram className="w-5 h-5 hover:text-red-500 hover:scale-110" />
           </a>
         </div>
       </div>
