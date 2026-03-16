@@ -23,11 +23,15 @@ const Projects = () => {
             className="object-cover"
             sizes="(max-width: 640px) 100vw, 400px"
           />
+
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
           <div className="absolute inset-0 flex items-end justify-center px-2 pb-3 sm:px-4 sm:pb-4">
-            <button className="bg-blue-950 text-white px-4 py-2 text-sm sm:text-base rounded-full group-hover:scale-110 hover:scale-115 shadow-gray-700 shadow-[10px_10px_10px_2px] hover:shadow-blue-500 hover:shadow-[0px_-10px_10px_5px] transition-all duration-300">
-              Portfolio Website
-            </button>
+            <a href="https://solomonaragaw.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <button className="bg-blue-950 text-white px-4 py-2 text-sm sm:text-base rounded-full group-hover:scale-110 hover:scale-115 shadow-gray-700 shadow-[10px_10px_10px_2px] hover:shadow-blue-500 hover:shadow-[0px_-10px_10px_5px] transition-all duration-300">
+                Portfolio Website
+              </button>
+            </a>
           </div>
         </div>
         <div className="group relative w-full aspect-[16/9] lg:aspect-auto lg:h-80 rounded-lg overflow-hidden hover:-translate-y-2 transition-all duration-700 shadow-gray-700 shadow-[10px_10px_10px_2px] hover:shadow-blue-500">

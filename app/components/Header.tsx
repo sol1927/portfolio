@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 const Header = () => {
 
   const viewResume = () => {
-    window.open("/solomon_resume.pdf", "_blank");
+    window.open("/solomon_Aragaw_resume.pdf", "_blank");
   };
 
   const fullText = "Hi, I am Solomon";
