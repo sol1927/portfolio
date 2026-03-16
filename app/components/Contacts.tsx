@@ -10,31 +10,35 @@ const Contacts = () => {
 
   const [result, setResult] = useState('');
 
- const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setResult("Sending....");
 
-    const form = event.currentTarget;
-    const formData = new FormData(form);
+    try {
+      const form = event.currentTarget;
+      const formData = new FormData(form);
 
-    formData.append("access_key", "5fe9d7a1-e6e3-42c2-9030-8938f84d8170");
+      formData.append("access_key", "5fe9d7a1-e6e3-42c2-9030-8938f84d8170");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      setResult("Successfully Sent");
-      form.reset();
-      setTimeout(() => setResult(""), 3000);
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      if (data.success) {
+        setResult("Successfully Sent");
+        form.reset();
+        setTimeout(() => setResult(""), 3000);
+      } else {
+        setResult(data.message);
+      }
+
+    } catch (error) {
+      console.log(error);
+      setResult("No internet connection");
     }
-
   };
 
   return (
@@ -42,10 +46,10 @@ const Contacts = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 2 }}
-      >
+    >
       <h1 className="flex justify-center text-4xl font-bold mt-30 text-glow">Contact me</h1>
       <p className="text-glow-2 text-2xl font-semibold p-4">
-        Got a question, idea, or just want to connect? Drop me a message – I am always happy to chat!
+        Got a question, idea, or just want to connect? Drop me a message - I am always happy to chat!
       </p>
       <form onSubmit={onSubmit}>
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -75,11 +79,10 @@ const Contacts = () => {
           <button
             type="submit"
             disabled={result === "Sending...."}
-            className={`shadow-gray-700 shadow-[10px_10px_10px_2px] bg-black text-white py-3 px-6 rounded-2xl transition-all duration-300 ${
-              result === "Sending...."
+            className={`shadow-gray-700 shadow-[10px_10px_10px_2px] bg-black text-white py-3 px-6 rounded-2xl transition-all duration-300 ${result === "Sending...."
                 ? "opacity-50 cursor-not-allowed"
                 : "hover:cursor-pointer hover:scale-110 hover:shadow-blue-500"
-            }`}
+              }`}
           >
             {result === "Sending...." ? "Sending..." : "Send Message"}
           </button>
@@ -94,8 +97,8 @@ const Contacts = () => {
         </a>
       </div>
       <div className="border-b flex justify-center items-center mt-6 gap-1">
-      <MdOutlineMail className="w-5 h-5" />
-      <p>solomonaragaw691@gmail.com</p>
+        <MdOutlineMail className="w-5 h-5" />
+        <p>solomonaragaw691@gmail.com</p>
       </div>
       <Footer />
     </motion.div>

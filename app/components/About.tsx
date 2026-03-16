@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <motion.div id="about" className="pt-8 p-4 m-30"
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 2 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 2 }}
     >
       <h1 className="flex justify-center mb-8 mt-25 text-4xl font-bold text-glow">About me</h1>
       <div className="flex flex-col md:flex-row items-start gap-6 mb-10">
@@ -53,17 +53,15 @@ const About = () => {
                 <li>CSS (Tailwind)</li>
                 <li>JavaScript (React, Next.js)</li>
                 <li>Node.js</li>
-                <li>C++</li>
-                <li>Java</li>
+                <li>MongoDB</li>
               </ul>
             </div>
             <div className="w-full bg-blue-950 text-white p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300">
               <h2 className="text-2xl flex justify-center">Projects</h2>
               <ul className="list-disc pl-2">
-                <li>Loading...</li>
+                <li>GibiGebeta</li>
                 <li>Rock-Paper-Scissors Game</li>
                 <li>Personal Portfolio Website</li>
-                <li>Job Portal Website</li>
               </ul>
             </div>
           </div>

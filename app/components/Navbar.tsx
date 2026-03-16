@@ -1,6 +1,5 @@
 'use client'
 
-import { HiOutlineMoon } from "react-icons/hi";
 import { IoMenu } from "react-icons/io5";
 import React, { useEffect, useState } from 'react';
 
@@ -63,10 +62,6 @@ const Navbar = () => {
           <a href="#contacts" className='hover:text-blue-600'>Contacts</a>
         </nav>
         <div className='flex items-center gap-4'>
-          <button className='pr-2'>
-            <HiOutlineMoon className='w-6 h-6 hover:rotate-720 cursor-pointer hover:scale-150 transition-all duration-300' />
-          </button>
-
           <button className='flex md:hidden justify-center items-center hover:cursor-pointer hover:scale-130 transition-all duration-300  bg-gray-300 rounded-full p-2 shadow-lg shadow-gray-600 hover:shadow-blue-500'
             onClick={() => setMenuOpen(!menuOpen)}>
             <IoMenu className='w-6 h-6' />

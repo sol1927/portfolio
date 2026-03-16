@@ -53,8 +53,8 @@ const Header = () => {
             />
             <div
               className="flex absolute inset-0 rounded-full pointer-events-none"
-              style={{ 
-                boxShadow: 'inset 18px 15px 20px 5px rgba(0, 0, 0, 0.75)' 
+              style={{
+                boxShadow: 'inset 18px 15px 20px 5px rgba(0, 0, 0, 0.75)'
               }}
             />
           </motion.div>
@@ -63,30 +63,30 @@ const Header = () => {
           <h3 className='text-3xl font-semibold text-glow'>
             {typedText}
           </h3>
-           
+
           <motion.h1 className='text-6xl font-bold text-glow'
             initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }} 
-            transition={{ duration : 0.6, delay: 0.4 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >Full-stack web developer based in Ethiopia</motion.h1>
           <motion.p className='font-semibold text-lg text-glow-2'
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration : 0.6, delay: 0.6 }}
-          >I am software engineering student passionate about building clean, responsive web apps and solve real-world problems with code</motion.p>
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >Software Engineering student with experience in building web applications using React, Next.js, and Node.js. Interested in developing practical solutions through coding.</motion.p>
           <div className='flex flex-col sm:flex-row m-2 p-4 gap-4 sm:gap-8 md:gap-20 items-center justify-center'>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration : 0.6, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
             >
               <button className='flex gap-2 items-center justify-center shadow-gray-700 shadow-[10px_10px_10px_2px] bg-black text-white py-3 px-6 rounded-2xl hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300' onClick={() => window.location.href = '#contacts'}
-              >Contact Me <span><FaArrowRight className='w-5 h-5'/></span></button>
+              >Contact Me <span><FaArrowRight className='w-5 h-5' /></span></button>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration : 0.6, delay: 1 }}
+              transition={{ duration: 0.6, delay: 1 }}
             >
               <button className='flex items-center justify-center gap-2 shadow-gray-700 shadow-[10px_10px_10px_2px] bg-green-600 py-3 px-6 rounded-2xl hover:cursor-pointer hover:scale-110 hover:shadow-blue-600 transition-all duration-300' onClick={viewResume} >View Resume <span><LuDownload className='w-5 h-5' /></span></button>
             </motion.div>

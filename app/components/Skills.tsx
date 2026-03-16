@@ -19,9 +19,7 @@ const Skills = () => {
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
-            <li>C++</li>
-            <li>Java</li>
-            <li>MySql</li>
+            <li>MongoDB</li>
           </ul>
         </div>
         <div className="bg-blue-950 text-white p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300">
@@ -30,6 +28,8 @@ const Skills = () => {
             <li>React</li>
             <li>Next.js</li>
             <li>Tailwind CSS</li>
+            <li>Node.js</li>
+
           </ul>
         </div>
         <div className="bg-blue-950 text-white p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300">
@@ -38,10 +38,9 @@ const Skills = () => {
             <li>Git</li>
             <li>GitHub</li>
             <li>Visual Studio Code</li>
-             <li>Node.js</li>
             <li>Figma</li>
           </ul>
-        </div>       
+        </div>
       </div>
     </motion.div>
   );
