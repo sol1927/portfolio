@@ -2,7 +2,6 @@
 
 import { assets } from '@/assets'
 import Image from 'next/image'
-import React from 'react'
 import { FaArrowRight } from "react-icons/fa";
 import { LuDownload } from "react-icons/lu";
 import { motion } from 'framer-motion';
@@ -12,7 +11,7 @@ import { useEffect, useState } from 'react';
 const Header = () => {
 
   const viewResume = () => {
-    window.open("/solomon_Aragaw_resume.pdf", "_blank");
+    window.open("/Solomon_Aragaw_Resume.pdf", "_blank");
   };
 
   const fullText = "Hi, I am Solomon";
