@@ -4,9 +4,16 @@ import { assets } from "@/assets";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaCode, FaRobot, FaServer, FaStickyNote, FaCheckCircle } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const Projects = () => {
-
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   const projects = [
     {
       title: "Social Media Sentiment AI",
@@ -68,7 +75,7 @@ const Projects = () => {
       </div>
 
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10 perspective-[1000px]"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10 md:perspective-[1000px]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
@@ -77,7 +84,7 @@ const Projects = () => {
           <motion.div
             key={idx}
             variants={{
-              hidden: { opacity: 0, y: 50, rotateX: 10 },
+              hidden: { opacity: 0, y: 50, rotateX: isMobile ? 0 : 10 },
               visible: {
                 opacity: 1,
                 y: 0,
@@ -85,14 +92,14 @@ const Projects = () => {
                 transition: { delay: idx * 0.1, duration: 0.6, type: "spring" }
               }
             }}
-            whileHover={{
+            whileHover={!isMobile ? {
               y: -12,
               rotateY: 5,
               translateZ: 30,
               backgroundColor: "rgba(255,255,255,0.08)"
-            }}
+            } : { y: -5 }}
             className="group relative rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md overflow-hidden transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-blue-500/20 flex flex-col"
-            style={{ transformStyle: "preserve-3d" }}
+            style={{ transformStyle: isMobile ? "flat" : "preserve-3d" }}
           >
             <div className="relative w-full aspect-[16/10] overflow-hidden bg-black/40 group-hover:bg-black/20 transition-colors">
               <Image
@@ -100,10 +107,11 @@ const Projects = () => {
                 alt={project.title}
                 fill
                 className="object-contain p-4 group-hover:scale-110 transition-transform duration-700 ease-out"
-                style={{ transform: "translateZ(20px)" }}
+                style={{ transform: isMobile ? "none" : "translateZ(20px)" }}
               />
             </div>
-            <div className="p-6 flex flex-col flex-grow" style={{ transform: "translateZ(40px)" }}>
+
+            <div className="p-6 flex flex-col flex-grow" style={{ transform: isMobile ? "none" : "translateZ(40px)" }}>
               <div className="flex items-center gap-3 mb-4">
                 <span className="p-2 rounded-xl bg-white/5 border border-white/10 shadow-inner group-hover:bg-white/10 transition-colors">
                   {project.icon}
@@ -116,15 +124,14 @@ const Projects = () => {
               <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow font-medium">
                 {project.description}
               </p>
-
-              <div className="flex items-center justify-between pt-4 border-t border-white/10 mt-auto">
+              <div className="relative z-30 flex items-center justify-between pt-4 border-t border-white/10 mt-auto">
                 {project.link !== "#" ? (
                   <motion.a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ x: 3 }}
-                    className="text-xs font-bold text-white flex items-center gap-2 hover:text-blue-400 transition-colors px-4 py-2 rounded-full bg-white/5 border border-white/10"
+                    className="cursor-pointer text-xs font-bold text-white flex items-center gap-2 hover:text-blue-400 transition-colors px-4 py-2 rounded-full bg-white/10 border border-white/20"
                   >
                     Launch <FaExternalLinkAlt size={10} />
                   </motion.a>
@@ -133,11 +140,11 @@ const Projects = () => {
                 )}
 
                 <motion.a
-                  href="https://github.com/SolomonAragaw"
+                  href="https://github.com/sol1927"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 10 }}
-                  className="text-gray-400 hover:text-white transition-all p-2 bg-white/5 rounded-full border border-white/10"
+                  className="cursor-pointer text-gray-400 hover:text-white transition-all p-2 bg-white/5 rounded-full border border-white/10"
                 >
                   <FaGithub size={18} />
                 </motion.a>
@@ -146,7 +153,6 @@ const Projects = () => {
           </motion.div>
         ))}
       </motion.div>
-
     </section>
   );
 };
