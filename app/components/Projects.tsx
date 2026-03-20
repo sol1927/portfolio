@@ -10,13 +10,13 @@ const Projects = () => {
   const projects = [
     {
       title: "Social Media Sentiment AI",
-      image: assets.portfolio,
+      image: assets.SMS,
       link: "https://socialmeadiasentiment.streamlit.app/",
       icon: <FaRobot className="text-purple-400" />,
       description: "Big data sentiment analysis and classification using advanced NLP."
     },
     {
-      title: "GibiGebeta (Full-Stack)",
+      title: "GibiGebeta",
       image: assets.logo,
       link: "https://gibigebeta.vercel.app/",
       icon: <FaServer className="text-blue-400" />,
@@ -30,14 +30,14 @@ const Projects = () => {
       description: "Immersive 3D animated portfolio showcasing engineering skills."
     },
     {
-      title: "Note App (Full-Stack)",
+      title: "Note App",
       image: assets.portfolio,
       link: "#",
       icon: <FaStickyNote className="text-yellow-400" />,
       description: "Persistent full-stack note-taking application with real-time sync."
     },
     {
-      title: "To-Do App (Full-Stack)",
+      title: "To-Do App",
       image: assets.portfolio,
       link: "#",
       icon: <FaCheckCircle className="text-green-400" />,
