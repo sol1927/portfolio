@@ -7,7 +7,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   title: "Solomon Aragaw | Portfolio",
-  description: "Interstellar 3D Portfolio Experience",
+  description: "Personal Site",
 };
 
 export default function RootLayout({
