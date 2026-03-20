@@ -70,7 +70,7 @@ const Skills = () => {
           whileInView={{ opacity: 1 }}
           className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed"
         >
-          Bridging the gap between robust Full-Stack architectures and advanced AI integration.
+          I combine full-stack development with AI to create smarter digital tools.
         </motion.p>
       </div>
 

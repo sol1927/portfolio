@@ -60,7 +60,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-5xl font-extrabold text-white mb-4"
         >
-          Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Works</span>
+          Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Works</span>
         </motion.h2>
         <p className="text-gray-400 text-lg max-w-xl mx-auto font-medium">
           Showcasing specialized Full-Stack development and AI-driven solutions.

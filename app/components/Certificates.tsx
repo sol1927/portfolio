@@ -68,13 +68,19 @@ const Certificates = () => {
     <section id="certificates" className="relative pt-32 pb-24 px-6 max-w-7xl mx-auto bg-transparent">
       <div className="text-center mb-16 relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: -20, translateZ: -50 }}
-          whileInView={{ opacity: 1, y: 0, translateZ: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-extrabold text-white"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-4xl md:text-5xl font-extrabold text-white mb-6"
         >
-          Certifications & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Awards</span>
+          Certifications & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Awards</span>
         </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed"
+        >
+          I have earned the following certifications
+        </motion.p>
       </div>
 
       <motion.div
