@@ -3,99 +3,141 @@
 import { assets } from "@/assets";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { FaGraduationCap, FaUserAstronaut, FaHeartbeat } from "react-icons/fa";
 
 const About = () => {
-  return (
-    <motion.div
-      id="about"
-      className="pt-8 p-4"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 2 }}
-    >
-      <h1 className="flex justify-center pt-24 mb-8 mt-10 text-3xl sm:text-4xl font-bold text-glow">
-        About me
-      </h1>
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const [typedText, setTypedText] = useState("");
+  const fullText = "Building the future with code and intelligence.";
+  const indexRef = useRef(0);
 
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-10">
-        <div className="m-4 flex-shrink-0 w-full sm:w-48 md:w-56">
-          <div className="relative w-full pb-[100%] rounded-[50%] overflow-hidden shadow-[10px_10px_10px_2px] shadow-gray-700 hover:scale-110 hover:shadow-blue-500 hover:shadow-[0px_0px_15px_15px] transition-all duration-300">
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (indexRef.current < fullText.length) {
+        setTypedText(fullText.slice(0, indexRef.current + 1));
+        indexRef.current++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 50);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleMouseMove = (e: any) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientY - rect.top - rect.height / 2) / 20;
+    const y = (e.clientX - rect.left - rect.width / 2) / 20;
+    setRotate({ x: -x, y: y });
+  };
+
+  return (
+    <section id="about" className="relative pt-32 pb-20 px-6 max-w-6xl mx-auto bg-transparent">
+      <div className="flex flex-col lg:flex-row items-center gap-16 relative z-10">
+        <motion.div
+          onMouseMove={handleMouseMove}
+          onMouseLeave={() => setRotate({ x: 0, y: 0 })}
+          animate={{ y: [0, -10, 0] }}
+          style={{
+            transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+            transformStyle: "preserve-3d"
+          }}
+          transition={{
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            default: { type: "spring", stiffness: 100, damping: 20 }
+          }}
+          className="relative group w-72 h-72 md:w-96 md:h-96 flex-shrink-0 cursor-pointer"
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-[3rem] rotate-6 group-hover:rotate-12 transition-transform duration-500 border border-white/5 backdrop-blur-sm"></div>
+          <div className="relative w-full h-full rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.5)] bg-white/5">
             <Image
               src={assets.mypic}
-              alt="pic"
+              alt="Solomon"
               fill
-              className="object-cover rounded-[50%]"
+              className="object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
             />
-            <div
-              className="absolute inset-0 rounded-[50%] pointer-events-none"
-              style={{
-                boxShadow: "inset 20px 20px 30px 30px rgba(0, 0, 0, 0.70)",
-              }}
-            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030014]/80 via-transparent to-transparent" />
           </div>
+        </motion.div>
+        <div className="flex-1 space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Me</span>
+            </h2>
+
+            <p className="text-xl font-mono text-purple-400 h-8">
+              {typedText}<span className="animate-blink">|</span>
+            </p>
+
+            <p className="text-gray-300 text-lg leading-relaxed mt-6">
+              I am a Full-Stack Developer and AI Engineer specializing in creating functional, impactful applications through modern web technologies and intelligent system integration.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <motion.div
+              whileHover={{ y: -5, translateZ: 20, backgroundColor: "rgba(255,255,255,0.08)" }}
+              className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-start gap-4 transition-all duration-300 shadow-xl"
+            >
+              <FaGraduationCap className="text-blue-400 text-3xl mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-white font-bold">Education</h3>
+                <p className="text-gray-400 text-sm">BSc Software Engineering<br />Arba Minch University</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -5, translateZ: 20, backgroundColor: "rgba(255,255,255,0.08)" }}
+              className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-start gap-4 transition-all duration-300 shadow-xl"
+            >
+              <FaUserAstronaut className="text-purple-400 text-3xl mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-white font-bold">Philosophy</h3>
+                <p className="text-gray-400 text-sm">Building efficient, scalable, and user-centric digital tools.</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -5, translateZ: 20, backgroundColor: "rgba(255,255,255,0.08)" }}
+              className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-start gap-4 md:col-span-2 transition-all duration-300 shadow-xl"
+            >
+              <FaHeartbeat className="text-green-400 text-3xl mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-white font-bold">Beyond the Screen</h3>
+                <p className="text-gray-400 text-sm">If I’m not debugging code, I’m practicing my kicks or serving the community. I find purpose in balancing technical precision with physical mastery in Taekwondo and social welfare.</p>
+              </div>
+            </motion.div>
+
+          </div>
+
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="pt-4">
+            <motion.button
+              whileHover={{ scale: 1.05, translateZ: 30, boxShadow: "0 0 30px rgba(79, 70, 229, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => (window.location.href = "#contacts")}
+              className="px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-full shadow-lg transition-all"
+            >
+              Let's Collaborate
+            </motion.button>
+          </motion.div>
         </div>
 
-        <div className="flex flex-col gap-6 flex-1 px-2 sm:px-4">
-          <p className="font-semibold text-base sm:text-lg text-glow-2">
-            I am Solomon, a software engineering student and full-stack web
-            developer based in Ethiopia. I enjoy turning complex problems into
-            elegant, functional solutions through clean, responsive code. I am
-            passionate about learning new technologies and building tools that
-            make a real difference.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-4 sm:gap-6">
-            <div className="w-full bg-blue-950 text-white p-4 sm:p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-105 hover:shadow-blue-500 transition-all duration-300">
-              <h2 className="text-lg sm:text-2xl flex justify-center mb-2">
-                Education
-              </h2>
-              <ul className="list-disc pl-4 text-sm sm:text-base">
-                <li>
-                  Bachelor of Science in Software Engineering, University of
-                  Arbaminch, Ethiopia
-                </li>
-              </ul>
-            </div>
-
-            <div className="w-full bg-blue-950 text-white p-4 sm:p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-105 hover:shadow-blue-500 transition-all duration-300">
-              <h2 className="text-lg sm:text-2xl flex justify-center mb-2">
-                Skills
-              </h2>
-              <ul className="list-disc pl-4 text-sm sm:text-base">
-                <li>HTML</li>
-                <li>CSS (Tailwind)</li>
-                <li>JavaScript (React, Next.js)</li>
-                <li>Node.js</li>
-                <li>MongoDB</li>
-              </ul>
-            </div>
-
-            <div className="w-full bg-blue-950 text-white p-4 sm:p-6 rounded-lg shadow-[5px_10px_10px_5px] shadow-gray-900 hover:cursor-pointer hover:scale-105 hover:shadow-blue-500 transition-all duration-300">
-              <h2 className="text-lg sm:text-2xl flex justify-center mb-2">
-                Projects
-              </h2>
-              <ul className="list-disc pl-4 text-sm sm:text-base">
-                <li>GibiGebeta</li>
-                <li>Rock-Paper-Scissors Game</li>
-                <li>Personal Portfolio Website</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-8 text-center">
-        <p className="text-glow-2 font-semibold text-base sm:text-lg">
-          Wants to know more? Feel free to contact me 😊
-        </p>
-        <button
-          className="shadow-gray-700 shadow-[10px_10px_10px_2px] bg-lime-800 border border-gray-700 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-2xl hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300"
-          onClick={() => (window.location.href = "#contacts")}
-        >
-          Contact me
-        </button>
-      </div>
-    </motion.div>
+      <style jsx>{`
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+        .animate-blink {
+          animation: blink 1s infinite;
+        }
+      `}</style>
+    </section>
   );
 };
 

@@ -5,8 +5,7 @@ import Image from 'next/image'
 import { FaArrowRight } from "react-icons/fa";
 import { LuDownload } from "react-icons/lu";
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-
+import { useEffect, useState, useRef } from 'react';
 
 const Header = () => {
 
@@ -14,86 +13,101 @@ const Header = () => {
     window.open("/Solomon_Aragaw_Resume.pdf", "_blank");
   };
 
-  const fullText = "Hi, I am Solomon";
+  const fullText = "Hi, I am Solomon Aragaw";
   const [typedText, setTypedText] = useState("");
 
+  const indexRef = useRef(0);
+
   useEffect(() => {
-    setTypedText("");
-    let i = 0;
     const interval = setInterval(() => {
-      const char = fullText[i];
-      if (char) {
-        setTypedText(prev => prev + char);
-        i++;
+      const i = indexRef.current;
+
+      if (i < fullText.length) {
+        setTypedText(fullText.slice(0, i + 1));
+        indexRef.current++;
       } else {
         clearInterval(interval);
       }
-    }, 100);
+    }, 80);
 
     return () => clearInterval(interval);
   }, []);
 
-
-
   return (
-    <>
-      <div id="header" className='flex flex-col items-center p-4 pt-32'>
+    <div id="header" className='relative flex flex-col items-center p-4 pt-32 bg-transparent'>
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.6, type: 'spring' }}
+        whileHover={{ rotateY: 15, rotateX: 10, translateZ: 50 }}
+        className="perspective-[1000px] z-20"
+      >
         <motion.div
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
+          className="flex w-28 sm:w-36 md:w-44 aspect-square rounded-full m-4 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] border-2 border-white/10"
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
-          <motion.div className="flex w-24 sm:w-32 md:w-40 aspect-square rounded-full m-4 relative overflow-hidden hover:scale-110 hover:shadow-[0px_0px_15px_15px] hover:shadow-blue-500 shadow-gray-700 shadow-[10px_10px_10px_2px] transition-all duration-300">
-            <Image
-              src={assets.mypic}
-              alt="pic"
-              fill
-              className="object-cover"
-            />
-            <div
-              className="flex absolute inset-0 rounded-full pointer-events-none"
-              style={{
-                boxShadow: 'inset 18px 15px 20px 5px rgba(0, 0, 0, 0.75)'
-              }}
-            />
-          </motion.div>
+          <Image
+            src={assets.mypic}
+            alt="Solomon Aragaw"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-t from-[#030014]/60 to-transparent" />
         </motion.div>
-        <div className='flex flex-col items-center text-center m-6 gap-6'>
-          <h3 className='text-3xl font-semibold text-glow'>
-            {typedText}
-          </h3>
+      </motion.div>
 
-          <motion.h1 className='text-6xl font-bold text-glow'
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >Full-stack web developer based in Ethiopia</motion.h1>
-          <motion.p className='font-semibold text-lg text-glow-2'
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >Software Engineering student with experience in building web applications using React, Next.js, and Node.js. Interested in developing practical solutions through coding.</motion.p>
-          <div className='flex flex-col sm:flex-row m-2 p-4 gap-4 sm:gap-8 md:gap-20 items-center justify-center'>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <button className='flex gap-2 items-center justify-center shadow-gray-700 shadow-[10px_10px_10px_2px] bg-black text-white py-3 px-6 rounded-2xl hover:cursor-pointer hover:scale-110 hover:shadow-blue-500 transition-all duration-300' onClick={() => window.location.href = '#contacts'}
-              >Contact Me <span><FaArrowRight className='w-5 h-5' /></span></button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-            >
-              <button className='flex items-center justify-center gap-2 shadow-gray-700 shadow-[10px_10px_10px_2px] bg-green-600 py-3 px-6 rounded-2xl hover:cursor-pointer hover:scale-110 hover:shadow-blue-600 transition-all duration-300' onClick={viewResume} >View Resume <span><LuDownload className='w-5 h-5' /></span></button>
-            </motion.div>
-          </div>
+      <div className='flex flex-col items-center text-center m-6 gap-6 z-10'>
+
+        <h3 className='text-3xl font-semibold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-sm'>
+          {typedText}
+        </h3>
+
+        <motion.h1
+          className='text-5xl md:text-6xl font-bold text-white drop-shadow-[0_0_20px_rgba(79,70,229,0.4)]'
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          Full-Stack & AI Engineer
+        </motion.h1>
+
+        <motion.p
+          className='font-medium text-lg text-gray-300 max-w-2xl text-center leading-relaxed'
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          Specializing in building modern web applications and AI-driven solutions.
+          I focus on creating high-performance systems that bridge the gap between
+          complex intelligence and user-centric design.
+        </motion.p>
+
+        <div className='flex flex-col sm:flex-row m-2 p-4 gap-6 items-center justify-center'>
+
+          <motion.button
+            whileHover={{ scale: 1.05, translateZ: 20 }}
+            whileTap={{ scale: 0.95 }}
+            className='flex gap-2 items-center justify-center bg-white/10 backdrop-blur-md text-white py-3 px-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300'
+            onClick={() => window.location.href = '#contacts'}
+          >
+            Contact Me <FaArrowRight className="text-blue-400" />
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.05, translateZ: 20 }}
+            whileTap={{ scale: 0.95 }}
+            className='flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-8 rounded-2xl shadow-lg shadow-blue-900/20 hover:shadow-blue-500/40 transition-all duration-300'
+            onClick={viewResume}
+          >
+            View Resume <LuDownload />
+          </motion.button>
+
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
-export default Header
+export default Header;
