@@ -6,7 +6,7 @@ import {
   FaBrain,
   FaLayerGroup,
   FaTools,
-  FaMicrochip
+  // FaMicrochip
 } from "react-icons/fa";
 
 const Skills = () => {
@@ -14,7 +14,7 @@ const Skills = () => {
     {
       title: "Core Languages",
       icon: <FaCode className="text-blue-400" />,
-      items: ["Python", "JavaScript", "TypeScript", "SQL", "HTML & CSS"],
+      items: ["Python", "JavaScript", "TypeScript", "HTML & CSS"],
       glow: "hover:shadow-blue-500/20"
     },
     {
@@ -94,7 +94,6 @@ const Skills = () => {
             className={`group p-8 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl transition-all duration-500 ${category.glow} flex flex-col`}
             style={{ transformStyle: "preserve-3d" }}
           >
-            {/* Category Icon */}
             <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-3xl mb-6 border border-white/10 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-300 shadow-inner">
               {category.icon}
             </div>
@@ -114,7 +113,7 @@ const Skills = () => {
           </motion.div>
         ))}
       </motion.div>
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         className="mt-16 p-8 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl"
@@ -135,7 +134,7 @@ const Skills = () => {
             </span>
           ))}
         </div>
-      </motion.div>
+      </motion.div> */}
 
     </section>
   );

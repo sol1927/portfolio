@@ -31,7 +31,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative mt-16 px-4 max-w-7xl mx-auto">
+    <footer className="relative p-6 px-4 max-w-7xl mx-auto">
       <div className="absolute w-[300px] h-[300px] bg-purple-500/20 blur-[120px] rounded-full bottom-0 left-1/2 -translate-x-1/2 animate-pulse"></div>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
