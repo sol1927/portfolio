@@ -9,7 +9,7 @@ const certificates = [
     title: "Programming Fundamentals Nanodegree",
     issuer: "Udacity",
     date: "Dec 19, 2025",
-    link: "/certs/FundamentalP.pdf",
+    link: "/certs/Fundamental.pdf",
     type: "Tech",
     icon: <FaCertificate />
   },
@@ -17,7 +17,7 @@ const certificates = [
     title: "Android Developer Fundamentals",
     issuer: "Udacity",
     date: "Dec 19, 2025",
-    link: "/certs/AndroidD.pdf",
+    link: "/certs/Android.pdf",
     type: "Tech",
     icon: <FaMobileAlt />
   },
