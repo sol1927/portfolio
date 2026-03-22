@@ -24,7 +24,7 @@ const About = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleMouseMove = (e: any) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientY - rect.top - rect.height / 2) / 20;
     const y = (e.clientX - rect.left - rect.width / 2) / 20;
