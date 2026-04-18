@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: "Note App",
       image: assets.portfolio,
-      link: "#",
+      link: "https://digitalnotepadx.vercel.app/",
       icon: <FaStickyNote className="text-yellow-400" />,
       description: "Persistent full-stack note-taking application with real-time sync."
     },
