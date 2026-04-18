@@ -3,6 +3,7 @@
 import React from "react";
 import { LuGithub, LuYoutube } from "react-icons/lu";
 import { FiLinkedin, FiInstagram } from "react-icons/fi";
+import { SiUpwork } from "react-icons/si;
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -17,7 +18,12 @@ const Footer = () => {
       icon: <FiLinkedin />,
       link: "https://www.linkedin.com/in/sol1927/",
       color: "hover:text-blue-500"
-    }
+    },
+{
+  icon: <SiUpwork />,
+  link: "https://www.upwork.com/freelancers/~0143bd81dc644a7a7f",
+  color: "hover:text-green-500"
+}
   ];
 
   return (
