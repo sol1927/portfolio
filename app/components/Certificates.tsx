@@ -28,30 +28,6 @@ const certificates = [
     link: "/certs/AI.pdf",
     type: "AI",
     icon: <FaBrain className="text-purple-400" />
-  },
-  {
-    title: "Phone Maintenance & Repair",
-    issuer: "Animaw Abeje Technology Institute",
-    date: "Certified",
-    link: "/certs/Mobile.pdf",
-    type: "Technical",
-    icon: <FaMobileAlt />
-  },
-  {
-    title: "TV & Electronics Repair",
-    issuer: "Animaw Abeje Technology Institute",
-    date: "Certified",
-    link: "/certs/Electronics.pdf",
-    type: "Technical",
-    icon: <FaTv />
-  },
-  {
-    title: "1st Dan Black Belt",
-    issuer: "ITF",
-    date: "Verified",
-    link: "/certs/Taekwondo.pdf",
-    type: "Personal",
-    icon: <FaAward />
   }
 ];
 
