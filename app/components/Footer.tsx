@@ -3,7 +3,7 @@
 import React from "react";
 import { LuGithub, LuYoutube } from "react-icons/lu";
 import { FiLinkedin, FiInstagram } from "react-icons/fi";
-import { SiUpwork } from "react-icons/si;
+import { SiUpwork } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const Footer = () => {
