@@ -19,11 +19,11 @@ const Footer = () => {
       link: "https://www.linkedin.com/in/sol1927/",
       color: "hover:text-blue-500"
     },
-{
-  icon: <SiUpwork />,
-  link: "https://www.upwork.com/freelancers/~0143bd81dc644a7a7f",
-  color: "hover:text-green-500"
-}
+    {
+      icon: <SiUpwork />,
+         link:"https://www.upwork.com/freelancers/~0143bd81dc644a7a7f",
+     color: "hover:text-green-500"
+    }
   ];
 
   return (
