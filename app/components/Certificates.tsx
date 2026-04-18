@@ -52,14 +52,6 @@ const certificates = [
     link: "/certs/Taekwondo.pdf",
     type: "Personal",
     icon: <FaAward />
-  },
-  {
-    title: "Community Welfare Volunteer",
-    issuer: "Wegenin Flega",
-    date: "Recognition",
-    link: "/certs/Welfare.pdf",
-    type: "Social",
-    icon: <FaHeart className="text-red-400" />
   }
 ];
 
