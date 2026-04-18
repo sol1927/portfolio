@@ -9,11 +9,6 @@ const Footer = () => {
 
   const socials = [
     {
-      icon: <LuYoutube />,
-      link: "https://www.youtube.com/@solomon8507",
-      color: "hover:text-red-500"
-    },
-    {
       icon: <LuGithub />,
       link: "https://github.com/sol1927",
       color: "hover:text-gray-300"
@@ -22,11 +17,6 @@ const Footer = () => {
       icon: <FiLinkedin />,
       link: "https://www.linkedin.com/in/sol1927/",
       color: "hover:text-blue-500"
-    },
-    {
-      icon: <FiInstagram />,
-      link: "https://www.instagram.com/sol19271/",
-      color: "hover:text-pink-500"
     }
   ];
 
