@@ -23,7 +23,7 @@ const Footer = () => {
       icon: <SiUpwork />,
          link:"https://www.upwork.com/freelancers/~0143bd81dc644a7a7f",
      color: "hover:text-green-500"
-    }
+    } 
   ];
 
   return (
