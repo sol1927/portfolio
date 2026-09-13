@@ -31,12 +31,17 @@
   0%,
   100% {
     opacity: 0.4;
-    filter: blur(100px) brightness(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    opacity: 0.7;
-    filter: blur(130px) brightness(1.3);
+    opacity: 0.58;
+    transform: translate3d(12px, -8px, 0) scale(1.03);
   }
+}
+@keyframes ambient-drift {
+  0%,
+  100% { opacity: 0.3; transform: translate3d(0, 0, 0) scale(1); }
+  50% { opacity: 0.38; transform: translate3d(10px, -6px, 0) scale(1.02); }
 }
 @keyframes comet-pass {
   0% {
@@ -56,11 +61,27 @@
 }
 
 .animate-galaxy {
-  animation: galaxy-rotate 100s linear infinite;
+  animation: galaxy-rotate 160s linear infinite;
+  will-change: transform;
 }
 .animate-flare {
-  animation: solar-flare 8s ease-in-out infinite;
+  animation: solar-flare 14s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+.ambient-drift {
+  animation: ambient-drift 18s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 .comet {
   animation: comet-pass 15s linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-galaxy,
+  .animate-flare,
+  .ambient-drift,
+  .comet {
+    animation: none;
+  }
 }
