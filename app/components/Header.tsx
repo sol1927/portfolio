@@ -101,7 +101,7 @@ const Header = () => {
             className='flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-8 rounded-2xl shadow-lg shadow-blue-900/20 hover:shadow-blue-500/40 transition-all duration-300'
             onClick={viewResume}
           >
-            View Resume <LuDownload />
+            View CV <LuDownload />
           </motion.button>
 
         </div>
