@@ -123,7 +123,7 @@ const Contacts = () => {
       <div className="mt-10 flex flex-col items-center gap-6 relative z-10">
         <div className="flex items-center gap-2 px-5 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 backdrop-blur-md">
           <MdOutlineMail className="text-purple-400 text-lg" />
-          <span className="text-[11px] font-mono font-semibold uppercase">solomonaragaw691@gmail.com</span>
+          <span className="text-[11px] font-mono font-semibold uppercase">solomonagw@gmail.com</span>
         </div>
 
         <motion.button

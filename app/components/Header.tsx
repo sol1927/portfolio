@@ -10,7 +10,7 @@ import { useEffect, useState, useRef } from 'react';
 const Header = () => {
 
   const viewResume = () => {
-    window.open("/Solomon_Aragaw_Resume.pdf", "_blank");
+    window.open("/Solomon Aragaw - Software Engineering CV.pdf", "_blank");
   };
 
   const fullText = "Hi, I am Solomon Aragaw";
